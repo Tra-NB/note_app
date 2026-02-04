@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fpdart/fpdart.dart';
-import '../../../core/error/failures.dart';
+import '../../../shared/error/failures.dart';
 
 class NoteRepository {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;

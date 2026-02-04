@@ -1,9 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 
-String formatTimestamp(Timestamp ts) {
-  final time = ts.toDate();
+String formatTimestamp(DateTime ts) {
   final now = DateTime.now();
-  final diff = now.difference(time);
+  final diff = now.difference(ts);
 
   if (diff.inSeconds < 60) {
     return 'Just now';
@@ -20,7 +18,7 @@ String formatTimestamp(Timestamp ts) {
   if (diff.inDays < 7) {
     return '${diff.inDays} days ago';
   }
-  return '${time.month}/${time.day}/${time.year}';
+  return '${ts.month}/${ts.day}/${ts.year}';
 }
 
 

@@ -38,6 +38,7 @@ dependencies:
   fluttertoast: ^8.2.10
   http: ^1.2.0
   flutter_dotenv: ^5.1.0
+  flutter_image_compress: ^2.4.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -47,6 +48,8 @@ dependencies:
   firebase_storage: ^12.4.10
   cloudinary: ^1.2.0
   fpdart: ^1.2.0
+  path_provider: ^2.1.5
+  path: ^1.9.1
 
 dev_dependencies:
   flutter_test:

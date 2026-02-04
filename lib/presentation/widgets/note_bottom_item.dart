@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/core/theme/app_theme.dart';
-import '../../../core/theme/app_colors.dart';
+import 'package:note_app/presentation/theme/app_theme.dart';
+import '../theme/app_colors.dart';
 
 class NoteBottomItem extends StatelessWidget {
   final IconData icon;
