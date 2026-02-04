@@ -2,18 +2,15 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../config.dart'; // Đảm bảo đường dẫn này đúng
+import '../config.dart';
 
 class ImageHelper {
   final ImagePicker _picker = ImagePicker();
 
-  // Sửa lỗi: thêm {ImageSource source}
   Future<XFile?> pickImage({ImageSource source = ImageSource.gallery}) async {
     return await _picker.pickImage(source: source);
   }
 
-  // Sửa lỗi: thêm method uploadToCloudinary
- // Trong ImageHelper
 Future<String?> uploadToCloudinary(XFile imageFile) async {
   try {
     final url = Uri.parse('https://api.cloudinary.com/v1_1/${AppConfig.cloudinaryCloudName}/image/upload');
