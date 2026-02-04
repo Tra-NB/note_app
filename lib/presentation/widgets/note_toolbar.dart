@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:note_app/presentation/theme/app_colors.dart';
 import 'package:note_app/presentation/theme/app_theme.dart';
-import '../../shared/image_helper.dart';
 
 class NoteToolbar extends StatelessWidget {
   final Function(XFile) onImageSelect;
@@ -13,7 +12,7 @@ class NoteToolbar extends StatelessWidget {
   });
 
   void _showImageSourceSheet(BuildContext context) {
-    final ImageHelper imageHelper = ImageHelper();
+    final ImagePicker picker = ImagePicker();
 
     showModalBottomSheet(
       context: context,
@@ -28,7 +27,7 @@ class NoteToolbar extends StatelessWidget {
             title: const Text('Chụp ảnh mới'),
             onTap: () async {
               Navigator.pop(context);
-              final XFile? image = await imageHelper.pickImage(source: ImageSource.camera);
+              final XFile? image = await picker.pickImage(source: ImageSource.camera);
               if (image != null) onImageSelect(image);
             },
           ),
@@ -37,7 +36,7 @@ class NoteToolbar extends StatelessWidget {
             title: const Text('Chọn từ thư viện'),
             onTap: () async {
               Navigator.pop(context);
-              final XFile? image = await imageHelper.pickImage(source: ImageSource.gallery);
+              final XFile? image = await picker.pickImage(source: ImageSource.gallery);
               if (image != null) onImageSelect(image);
             },
           ),
